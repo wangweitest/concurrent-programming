@@ -3,7 +3,7 @@ package chapter3;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * ÖØÈëËø
+ * Ğ¾Ğ¿â•šĞ²â•¦Ğ­
  * Created by 13 on 2017/5/5.
  */
 public class ReenterLock implements Runnable {

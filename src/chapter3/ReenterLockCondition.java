@@ -29,7 +29,7 @@ public class ReenterLockCondition implements Runnable {
         ReenterLockCondition reenterLockCondition = new ReenterLockCondition();
         Thread thread1 = new Thread(reenterLockCondition);
         thread1.start();
-        System.out.println("Ë¯Ãß2ÃëÖÓ");
+        System.out.println("ç¡çœ 2ç§’é’Ÿ");
         Thread.sleep(2000);
         lock.lock();
         condition.signal();
