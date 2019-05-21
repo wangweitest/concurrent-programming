@@ -3,7 +3,7 @@ package chapter2;
 /**
  * Created by 13 on 2017/5/4.
  */
-public class JoinMain {
+public class JoinMain06 {
     public volatile static int i = 0;
 
     public static class AddThread extends Thread {
@@ -22,8 +22,13 @@ public class JoinMain {
 
         AddThread at = new AddThread();
         at.start();
-        at.join();//使用join()方法后,主线程会等待AddThread执行完毕,i输出为1000000,如果没有这条语句,i输出为0
+        at.sleep(1);
+//       System.out.println(at.isAlive());
+        //使用join()方法后,主线程会等待AddThread执行完毕,i输出为1000000,如果没有这条语句,i输出为0
         //可以查看join的底层代码,本质即让调用线程在当前线程对象实例上等待
-        System.out.println(i);
+        //thread.isAlive():当前线程是否正在执行
+        //wait(0)方法表示无限等待
+        at.join();
+        System.out.println(Thread.currentThread().getName() + ":" +i);
     }
 }
