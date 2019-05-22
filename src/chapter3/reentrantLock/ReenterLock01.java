@@ -1,18 +1,17 @@
-package chapter3;
+package chapter3.reentrantLock;
 
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * оп╚в╦Э
  * Created by 13 on 2017/5/5.
  */
-public class ReenterLock implements Runnable {
+public class ReenterLock01 implements Runnable {
     public static ReentrantLock lock = new ReentrantLock();
     public static int i = 0;
 
     @Override
     public void run() {
-        for (int j = 0; j < 1000000; j++) {
+        for (int j = 0; j < 1000; j++) {
             lock.lock();
             try {
                 i++;
@@ -24,7 +23,7 @@ public class ReenterLock implements Runnable {
     }
 
     public static void main(String args[]) throws InterruptedException {
-        ReenterLock reenterLock = new ReenterLock();
+    	ReenterLock01 reenterLock = new ReenterLock01();
         Thread thread1 = new Thread(reenterLock);
         Thread thread2 = new Thread(reenterLock);
 

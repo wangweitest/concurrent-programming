@@ -1,16 +1,16 @@
-package chapter3;
+package chapter3.reentrantLock;
 
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Created by 13 on 2017/5/5.
  */
-public class IntLock implements Runnable {
+public class InterruptLock02 implements Runnable {
     public static ReentrantLock lock1 = new ReentrantLock();
     public static ReentrantLock lock2 = new ReentrantLock();
     int lock;
 
-    public IntLock(int lock) {
+    public InterruptLock02(int lock) {
         this.lock = lock;
     }
 
@@ -47,8 +47,8 @@ public class IntLock implements Runnable {
      * @throws InterruptedException
      */
     public static void main(String args[]) throws InterruptedException {
-        IntLock r1 = new IntLock(1);
-        IntLock r2 = new IntLock(2);
+    	InterruptLock02 r1 = new InterruptLock02(1);
+    	InterruptLock02 r2 = new InterruptLock02(2);
 
         Thread thread1 = new Thread(r1);
         Thread thread2 = new Thread(r2);

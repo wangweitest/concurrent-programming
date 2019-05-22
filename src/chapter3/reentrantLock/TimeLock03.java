@@ -1,4 +1,4 @@
-package chapter3;
+package chapter3.reentrantLock;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
@@ -6,7 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * Created by 13 on 2017/5/5.
  */
-public class TimeLock implements Runnable {
+public class TimeLock03 implements Runnable {
     public static ReentrantLock lock = new ReentrantLock();
 
     @Override
@@ -34,7 +34,7 @@ public class TimeLock implements Runnable {
      * @param args
      */
     public static void main(String args[]) {
-        TimeLock timeLock = new TimeLock();
+    	TimeLock03 timeLock = new TimeLock03();
         Thread thread1 = new Thread(timeLock);
         Thread thread2 = new Thread(timeLock);
 
