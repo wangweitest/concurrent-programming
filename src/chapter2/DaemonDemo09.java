@@ -2,8 +2,9 @@ package chapter2;
 
 /**
  * Created by 13 on 2017/5/4.
+ * 守护线程：感觉没有什么用。。。。
  */
-public class DaemonDemo {
+public class DaemonDemo09 {
     public static class DaemonT extends Thread {
         public void run() {
             while (true) {

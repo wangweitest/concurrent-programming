@@ -3,7 +3,7 @@ package chapter2;
 /**
  * Created by 13 on 2017/5/4.
  */
-public class VolatileDemo {
+public class VolatileDemo07 {
     static volatile int i = 0;
 
     public static class PlusTask implements Runnable {

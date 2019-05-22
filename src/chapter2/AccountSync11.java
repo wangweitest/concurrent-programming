@@ -3,13 +3,9 @@ package chapter2;
 /**
  * Created by 13 on 2017/5/4.
  */
-public class AccountingVol implements Runnable {
-    static AccountingVol instance = new AccountingVol();
+public class AccountSync11 implements Runnable {
+    static AccountSync11 instance = new AccountSync11();
     static volatile int i = 0;
-
-    public static void increase() {
-        i++;
-    }
 
     /**
      * When an object implementing interface <code>Runnable</code> is used
@@ -25,14 +21,16 @@ public class AccountingVol implements Runnable {
     @Override
     public void run() {
         for (int j = 0; j < 10000000; j++) {
-            increase();
+            /**
+             * synchronized的作用是实现线程间的同步,对同步的代码加锁,使得每一次都只能有一个线程进入同步块从而保证线程间的安全性.
+             */
+            synchronized (instance) {
+                i++;
+            }
         }
     }
 
     /**
-     * 主函数是通过两个线程对i进行累加操作,最终的正确结果应为20000000,但是实际运行却远远小于正确数值,因为多个线程同事对i进行写入操作时,
-     * 其中一个线程的结果会覆盖另外一个线程的操作,线程不安全导致了这种冲突.
-     *
      * @param args
      * @throws InterruptedException
      */
@@ -48,5 +46,4 @@ public class AccountingVol implements Runnable {
 
         System.out.println(i);
     }
-
 }

@@ -2,8 +2,9 @@ package chapter2;
 
 /**
  * Created by 13 on 2017/5/4.
+ * 线程组
  */
-public class ThreadGroupName implements Runnable {
+public class ThreadGroupName08 implements Runnable {
     /**
      * When an object implementing interface <code>Runnable</code> is used
      * to create a thread, starting the thread causes the object's
@@ -30,12 +31,12 @@ public class ThreadGroupName implements Runnable {
 
     public static void main(String args[]) {
         ThreadGroup tg = new ThreadGroup("PrintGroup");
-        Thread t1 = new Thread(tg, new ThreadGroupName(), "T1");
-        Thread t2 = new Thread(tg, new ThreadGroupName(), "T2");
+        Thread t1 = new Thread(tg, new ThreadGroupName08(), "T1");
+        Thread t2 = new Thread(tg, new ThreadGroupName08(), "T2");
         t1.start();
         t2.start();
         System.out.println(tg.activeCount());
-        Thread t3 = new Thread(tg, new ThreadGroupName(), "T3");
+        Thread t3 = new Thread(tg, new ThreadGroupName08(), "T3");
         t3.start();
         System.out.println(tg.activeCount());
         tg.list();

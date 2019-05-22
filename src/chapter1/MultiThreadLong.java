@@ -59,6 +59,10 @@ public class MultiThreadLong {
         }
     }
 
+    /**
+     * 32位虚拟机才会有问题，64位不会
+     * @param args
+     */
     public static void main(String args[]) {
         new Thread(new ChangeT(111L)).start();
         new Thread(new ChangeT(-999L)).start();
