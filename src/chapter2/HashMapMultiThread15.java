@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * Created by 13 on 2017/5/4.
  */
-public class HashMapMultiThread {
+public class HashMapMultiThread15 {
     static Map<String, String> map = new HashMap<String, String>();
 
     public static class AddThread implements Runnable {
@@ -45,8 +45,8 @@ public class HashMapMultiThread {
      * @throws InterruptedException
      */
     public static void main(String args[]) throws InterruptedException {
-        Thread thread1 = new Thread(new HashMapMultiThread.AddThread(0));
-        Thread thread2 = new Thread(new HashMapMultiThread.AddThread(1));
+        Thread thread1 = new Thread(new HashMapMultiThread15.AddThread(0));
+        Thread thread2 = new Thread(new HashMapMultiThread15.AddThread(1));
         thread1.start();
         thread2.start();
         thread1.join();

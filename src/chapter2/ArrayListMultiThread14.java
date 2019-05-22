@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by 13 on 2017/5/4.
  */
-public class ArrayListMultiThread {
+public class ArrayListMultiThread14 {
     static ArrayList<Integer> arrayList = new ArrayList<Integer>(10);
 
     public static class AddThread implements Runnable {

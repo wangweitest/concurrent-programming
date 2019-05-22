@@ -5,10 +5,11 @@ package chapter2;
  * <p/>
  * Created by 13 on 2017/5/4.
  */
-public class BadLockOnInteger implements Runnable {
+public class BadLockOnInteger16 implements Runnable {
 
     public static Integer i = 0;
-    static BadLockOnInteger instance = new BadLockOnInteger();
+    public static Integer n = 0;
+    static BadLockOnInteger16 instance = new BadLockOnInteger16();
 
     /**
      * When an object implementing interface <code>Runnable</code> is used
@@ -25,7 +26,7 @@ public class BadLockOnInteger implements Runnable {
     public void run() {
         for (int j = 0; j < 1000000; j++) {
             synchronized (i) {//这里同步的并不是同一个对象,因为i是以Integer关键字创建的
-                //正确做法应该是 synchronized (instance)
+                //正确做法应该是 synchronized (instance)，或者一个固定对象，比如上边的n
                 i++;
             }
         }
