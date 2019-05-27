@@ -8,9 +8,9 @@ import java.util.concurrent.Executors;
 /**
  * Created by 13 on 2017/5/5.
  */
-public class CountDownLatchDemo implements Runnable {
+public class CountDownLatchDemo09 implements Runnable {
     static final CountDownLatch end = new CountDownLatch(10);
-    static final CountDownLatchDemo demo = new CountDownLatchDemo();
+    static final CountDownLatchDemo09 demo = new CountDownLatchDemo09();
 
     @Override
     public void run() {

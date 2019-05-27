@@ -8,7 +8,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 /**
  * Created by 13 on 2017/5/5.
  */
-public class ReadWriteLockDemo {
+public class ReadWriteLockDemo08 {
     private static Lock lock = new ReentrantLock();
     private static ReentrantReadWriteLock reentrantReadWriteLock = new ReentrantReadWriteLock();
     private static Lock readLock = reentrantReadWriteLock.readLock();
@@ -38,7 +38,7 @@ public class ReadWriteLockDemo {
     }
 
     public static void main(String args[]) {
-        final ReadWriteLockDemo demo = new ReadWriteLockDemo();
+        final ReadWriteLockDemo08 demo = new ReadWriteLockDemo08();
 
         Runnable readRunnable = new Runnable() {
             @Override

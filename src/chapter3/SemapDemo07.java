@@ -8,7 +8,7 @@ import java.util.concurrent.Semaphore;
  * 信号量
  * Created by 13 on 2017/5/5.
  */
-public class SemapDemo implements Runnable {
+public class SemapDemo07 implements Runnable {
     final Semaphore semp = new Semaphore(5);
 
     @Override
@@ -30,7 +30,7 @@ public class SemapDemo implements Runnable {
      */
     public static void main(String args[]) {
         ExecutorService executorService = Executors.newFixedThreadPool(20);
-        final SemapDemo demo = new SemapDemo();
+        final SemapDemo07 demo = new SemapDemo07();
         for (int i = 0; i < 20; i++) {
             executorService.submit(demo);
         }

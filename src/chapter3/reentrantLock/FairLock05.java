@@ -1,11 +1,11 @@
-package chapter3;
+package chapter3.reentrantLock;
 
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Created by 13 on 2017/5/5.
  */
-public class FairLock implements Runnable {
+public class FairLock05 implements Runnable {
 
     public static ReentrantLock fairLock = new ReentrantLock(true);//设置true指定锁是公平的,也可以不设置,分别运行观察公平锁与非公平锁间的区别
     //public static ReentrantLock unfairLock = new ReentrantLock();
@@ -26,13 +26,12 @@ public class FairLock implements Runnable {
 
     /**
      * 公平锁的一个特点是:不会产生饥饿现象,只要排队最终都会得到资源.
-     * <p/>
      * 但是实现公平锁要求系统维护一个有序队列,因此公平锁的实现成本较高,性能相对低下.
      *
      * @param args
      */
     public static void main(String args[]) {
-        FairLock r1 = new FairLock();
+    	FairLock05 r1 = new FairLock05();
         Thread thread1 = new Thread(r1, "Thread_t1");
         Thread thread2 = new Thread(r1, "Thread_t2");
         Thread thread3 = new Thread(r1, "Thread_t3");
